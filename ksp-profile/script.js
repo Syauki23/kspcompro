@@ -56,5 +56,44 @@
     });
   });
 
+  // ---- Modal Logic ----
+  const modalBtns = document.querySelectorAll('.learn-more-btn');
+  const closeBtns = document.querySelectorAll('.modal-close-btn');
+  
+  modalBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const modalId = this.getAttribute('data-modal');
+      if (modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.add('show');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+      }
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const modal = this.closest('.service-modal-overlay');
+      if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close modal when clicking outside
+  const overlays = document.querySelectorAll('.service-modal-overlay');
+  overlays.forEach(overlay => {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
   console.log('%cKSP Consulting | Everything Connected', 'color: #F5A623; font-size: 14px; font-weight: bold;');
 })();
