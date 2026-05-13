@@ -243,7 +243,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   padding: 100px 40px 0 40px;
-  max-width: 600px;
+  max-width: 950px;
 }
 
 .hero-headline {
@@ -522,7 +522,7 @@ ul {
 @media (max-width: 1024px) {
   .navbar-nav { gap: 2px; }
   .navbar-nav .nav-item a { padding: 6px 10px; font-size: 13px; }
-  .hero-content { max-width: 520px; }
+  .hero-content { max-width: 850px; }
   .hero-headline { font-size: 40px; }
 }
 
