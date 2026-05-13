@@ -17,13 +17,9 @@
 
     if (navbar) {
       if (currentScrollY > 60) {
-        navbar.style.backgroundColor = 'rgba(8, 18, 38, 0.95)';
-        navbar.style.backdropFilter = 'blur(12px)';
-        navbar.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+        navbar.classList.add('scrolled');
       } else {
-        navbar.style.backgroundColor = '';
-        navbar.style.backdropFilter = '';
-        navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)';
+        navbar.classList.remove('scrolled');
       }
     }
 
