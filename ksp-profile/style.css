@@ -232,42 +232,36 @@ ul {
   transform: translateY(-1px);
 }
 
-/* --- Light Navbar for Services Page --- */
-.navbar.navbar-light {
-  background-color: var(--white);
-  border-bottom: 1px solid #eaeaea;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+/* --- Premium Dark Navbar for Services Page --- */
+.navbar.navbar-services {
+  background-color: rgba(10, 22, 40, 0.98);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.navbar.navbar-light .navbar-nav .nav-item a {
-  color: var(--navy-mid);
+.navbar.navbar-services .navbar-nav .nav-item a {
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+.navbar.navbar-services .navbar-nav .nav-item a:hover {
+  color: var(--primary-orange);
+}
+
+.navbar.navbar-services .navbar-nav .nav-item.active a {
+  color: var(--primary-orange);
   font-weight: 600;
 }
 
-.navbar.navbar-light .navbar-nav .nav-item a:hover {
-  color: var(--primary-orange);
+.navbar.navbar-services .social-icon {
+  color: #f1f5f9;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.navbar.navbar-light .navbar-nav .nav-item.active a {
-  color: var(--primary-orange);
-}
-
-.navbar.navbar-light .navbar-nav .nav-item.active a::after {
-  display: none;
-}
-
-.navbar.navbar-light .social-icon {
-  color: var(--navy-mid);
-  border-color: #d1d5db;
-}
-
-.navbar.navbar-light .social-icon:hover {
+.navbar.navbar-services .social-icon:hover {
   border-color: var(--primary-orange);
   color: var(--primary-orange);
-}
-
-.logo-dark-filter {
-  filter: invert(11%) sepia(21%) saturate(3025%) hue-rotate(189deg) brightness(96%) contrast(97%);
 }
 
 /* =========================================
