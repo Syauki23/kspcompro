@@ -1097,3 +1097,257 @@ ul {
   .chat-popup { right: 10px; width: 240px; }
   .float-whatsapp, .float-chat { right: 16px; }
 }
+
+/* =========================================
+   CONSULTATION / CONTACT MODAL STYLING
+   ========================================= */
+.consult-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 25, 44, 0.75);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.consult-modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.consult-modal-container {
+  background: var(--white);
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.consult-modal-overlay.show .consult-modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.consult-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #94a3b8;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+
+.consult-modal-close:hover {
+  color: #0f172a;
+}
+
+.consult-modal-left {
+  flex: 0 0 30%;
+  position: relative;
+  overflow: hidden;
+}
+
+.consult-modal-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.consult-modal-right {
+  flex: 1;
+  padding: 40px 48px;
+  background-color: var(--white);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.consult-modal-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.consult-modal-desc {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.consult-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: flex;
+  gap: 14px;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-row.full-width {
+  width: 100%;
+}
+
+.consult-input,
+.consult-select,
+.consult-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: var(--white);
+  font-size: 14px;
+  color: #1e293b;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.consult-input::placeholder,
+.consult-textarea::placeholder {
+  color: #94a3b8;
+}
+
+.consult-input:focus,
+.consult-select:focus,
+.consult-textarea:focus {
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.consult-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+.consult-select:invalid,
+.consult-select option[value=""][disabled] {
+  color: #94a3b8;
+}
+
+.consult-select option {
+  color: #1e293b;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 14px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.consult-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-consult-submit {
+  width: 100%;
+  padding: 13px;
+  background-color: #0b2545;
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-consult-submit:hover {
+  background-color: #133a6b;
+}
+
+.btn-consult-submit:active {
+  transform: scale(0.99);
+}
+
+.btn-consult-whatsapp {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--white);
+  color: #22c55e;
+  border: 1.5px solid #22c55e;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-consult-whatsapp:hover {
+  background-color: #f0fdf4;
+}
+
+.consult-secure-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .consult-modal-container {
+    flex-direction: column;
+    max-height: 90vh;
+  }
+  .consult-modal-left {
+    display: none;
+  }
+  .consult-modal-right {
+    padding: 28px 24px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 14px;
+  }
+}

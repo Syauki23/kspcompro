@@ -95,5 +95,60 @@
     });
   });
 
+  // ---- Consultation Modal Logic ----
+  const consultModal = document.getElementById('modal-consultation');
+  const consultTriggers = document.querySelectorAll('.btn-consult, a[href="#contact"], a[id*="contact"], a[href$="#contact"]');
+  
+  if (consultModal) {
+    consultTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        consultModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const consultClose = consultModal.querySelector('.consult-modal-close');
+    if (consultClose) {
+      consultClose.addEventListener('click', function() {
+        consultModal.classList.remove('show');
+        document.body.style.overflow = '';
+      });
+    }
+
+    consultModal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        consultModal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Form submission feedback simulation
+    const consultForm = consultModal.querySelector('#consultationForm');
+    if (consultForm) {
+      consultForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = consultForm.querySelector('.btn-consult-submit');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>Sending...</span>';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+          submitBtn.innerHTML = '<span>Inquiry Sent Successfully!</span>';
+          submitBtn.style.backgroundColor = '#22c55e';
+          
+          setTimeout(() => {
+            consultModal.classList.remove('show');
+            document.body.style.overflow = '';
+            consultForm.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.style.backgroundColor = '';
+            submitBtn.disabled = false;
+          }, 1500);
+        }, 1200);
+      });
+    }
+  }
+
   console.log('%cKSP Consulting | Everything Connected', 'color: #F5A623; font-size: 14px; font-weight: bold;');
 })();
