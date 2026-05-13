@@ -111,38 +111,17 @@ ul {
 }
 
 .logo-icon {
-  width: 48px;
-  height: 48px;
-}
-
-/* SVG Cube icon */
-.logo-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.logo-text {
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
 }
 
-.logo-text .brand-name {
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  color: var(--white);
-  text-transform: uppercase;
+.main-logo {
+  height: 50px;
+  width: auto;
+  display: block;
 }
 
-.logo-text .brand-sub {
-  font-size: 9px;
-  font-weight: 400;
-  color: var(--text-muted);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-top: 1px;
-}
+
 
 /* --- Nav Links --- */
 .navbar-nav {
@@ -497,172 +476,7 @@ ul {
   opacity: 1;
 }
 
-/* =========================================
-   FLOATING LIVE CHAT BUTTON
-   ========================================= */
-.float-chat {
-  position: fixed;
-  right: 24px;
-  bottom: 34px;
-  z-index: 1000;
-}
 
-.float-chat-btn {
-  width: 52px;
-  height: 52px;
-  background-color: var(--primary-orange);
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.45);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.float-chat-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 22px rgba(245, 166, 35, 0.6);
-}
-
-.float-chat-btn svg {
-  width: 24px;
-  height: 24px;
-  fill: #000;
-}
-
-.float-chat-label {
-  position: absolute;
-  right: 62px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.65);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.float-chat:hover .float-chat-label {
-  opacity: 1;
-}
-
-/* =========================================
-   CHAT POPUP WIDGET
-   ========================================= */
-.chat-popup {
-  position: fixed;
-  right: 24px;
-  bottom: 96px;
-  z-index: 1000;
-  width: 260px;
-  background: var(--white);
-  border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  transform: scale(0.92) translateY(10px);
-  transform-origin: bottom right;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.chat-popup.active {
-  transform: scale(1) translateY(0);
-  opacity: 1;
-  pointer-events: all;
-}
-
-.chat-popup-header {
-  background: var(--navy-dark);
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.chat-popup-avatar {
-  width: 36px;
-  height: 36px;
-  background: var(--primary-orange);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.chat-popup-info .agent-name {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--white);
-}
-
-.chat-popup-info .agent-status {
-  font-size: 10px;
-  color: #4ade80;
-  font-weight: 500;
-}
-
-.chat-popup-close {
-  margin-left: auto;
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.6);
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 1;
-  padding: 2px;
-  transition: color 0.2s;
-}
-
-.chat-popup-close:hover {
-  color: var(--white);
-}
-
-.chat-popup-body {
-  padding: 16px;
-}
-
-.chat-bubble {
-  background: #f0f4ff;
-  border-radius: 12px 12px 12px 4px;
-  padding: 10px 14px;
-  font-size: 12.5px;
-  color: #1a2840;
-  line-height: 1.5;
-  margin-bottom: 16px;
-  font-family: var(--font-main);
-}
-
-.chat-bubble strong {
-  display: block;
-  margin-bottom: 2px;
-}
-
-.chat-cta-link {
-  display: block;
-  text-align: center;
-  color: #1a6eff;
-  font-size: 13px;
-  font-weight: 700;
-  font-family: var(--font-main);
-  cursor: pointer;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.chat-cta-link:hover {
-  color: #0047cc;
-}
 
 /* =========================================
    ANIMATIONS

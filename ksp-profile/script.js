@@ -6,29 +6,7 @@
 (function () {
   'use strict';
 
-  // ---- Chat Popup Toggle ----
-  const chatBtn    = document.getElementById('chat-float-btn');
-  const chatPopup  = document.getElementById('chat-popup');
-  const chatClose  = document.getElementById('chat-close-btn');
 
-  if (chatBtn && chatPopup) {
-    chatBtn.addEventListener('click', function () {
-      chatPopup.classList.toggle('active');
-    });
-  }
-
-  if (chatClose && chatPopup) {
-    chatClose.addEventListener('click', function () {
-      chatPopup.classList.remove('active');
-    });
-  }
-
-  // Close popup when clicking outside
-  document.addEventListener('click', function (e) {
-    if (chatPopup && !chatPopup.contains(e.target) && e.target !== chatBtn) {
-      chatPopup.classList.remove('active');
-    }
-  });
 
   // ---- Sticky Navbar ----
   const navbar = document.getElementById('main-navbar');
