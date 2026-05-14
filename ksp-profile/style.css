@@ -800,64 +800,6 @@ ul {
    BLOG PAGE STYLES (100% Replication of Layout)
    ========================================= */
 
-/* --- Custom Navbar for Blog (Light Mode) --- */
-.navbar.navbar-blog {
-  position: absolute;
-  background-color: var(--white);
-  border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  padding: 18px 40px;
-}
-
-.navbar.navbar-blog.scrolled {
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  padding: 14px 40px;
-}
-
-/* KSP Logo — dark version for light background */
-.navbar.navbar-blog .blog-logo {
-  filter: brightness(0) saturate(100%) invert(10%) sepia(21%) saturate(2251%) hue-rotate(182deg) brightness(95%) contrast(97%);
-}
-
-.navbar.navbar-blog .blog-nav .nav-item a {
-  color: #334155;
-  font-weight: 500;
-}
-
-.navbar.navbar-blog .blog-nav .nav-item a:hover {
-  color: var(--primary-orange);
-}
-
-.navbar.navbar-blog .blog-nav .nav-item.active a {
-  color: var(--primary-orange);
-  font-weight: 600;
-}
-
-.navbar.navbar-blog .blog-nav .nav-item.active a::after {
-  background-color: var(--primary-orange);
-}
-
-.navbar.navbar-blog .blog-social {
-  color: #334155;
-  border-color: #cbd5e1;
-  background: transparent;
-}
-
-.navbar.navbar-blog .blog-social:hover {
-  color: var(--white);
-  background: var(--navy-dark);
-  border-color: var(--navy-dark);
-}
-
-.navbar.navbar-blog .btn-consult {
-  background: var(--primary-orange);
-  color: #000;
-}
 
 /* --- Base Layout --- */
 .page-blog {
