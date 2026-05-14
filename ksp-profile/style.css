@@ -305,6 +305,72 @@ ul {
 .nav-dropdown-icon {
   font-size: 10px;
   opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.nav-item.dropdown:hover .nav-dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu Container */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--navy-dark);
+  min-width: 220px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 8px 0;
+  z-index: 100;
+  list-style: none;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px !important;
+  font-size: 13.5px !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  display: block !important;
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+.dropdown-menu li a:hover {
+  color: var(--primary-orange) !important;
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  padding-left: 24px !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Disable the parent ::after underline inside dropdown */
+.dropdown-menu li.active a::after {
+  display: none !important;
+}
+
+.dropdown-menu li.active a {
+  color: var(--primary-orange) !important;
+  font-weight: 600 !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
 /* --- Nav Right (social + CTA) --- */
