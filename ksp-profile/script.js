@@ -26,11 +26,11 @@
     lastScrollY = currentScrollY;
   });
 
-  // ---- Smooth scroll for "Explore Services" ----
+  // ---- Navigation for "Explore Services" ----
   const exploreBtn = document.getElementById('explore-services-btn');
   if (exploreBtn) {
     exploreBtn.addEventListener('click', function () {
-      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+      window.location.href = 'services.html';
     });
   }
 
@@ -97,7 +97,7 @@
 
   // ---- Consultation Modal Logic ----
   const consultModal = document.getElementById('modal-consultation');
-  const consultTriggers = document.querySelectorAll('.btn-consult, a[href="#contact"], a[id*="contact"], a[href$="#contact"]');
+  const consultTriggers = document.querySelectorAll('.btn-consult, #consult-btn, a[href="#contact"], a[id*="contact"], a[href$="#contact"]');
   
   if (consultModal) {
     consultTriggers.forEach(trigger => {
@@ -149,6 +149,17 @@
       });
     }
   }
+
+  // ---- Global Escape Key Listener for Modals ----
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const activeModals = document.querySelectorAll('.service-modal-overlay.show, .consult-modal-overlay.show');
+      activeModals.forEach(modal => {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      });
+    }
+  });
 
   // ---- Training Gallery Auto Slider ----
   const gallerySlides = document.querySelectorAll('.tg-large .tg-slide');
