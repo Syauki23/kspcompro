@@ -2031,3 +2031,214 @@ ul {
   }
 }
 
+/* =========================================
+   PHILOSOPHY PAGE
+   ========================================= */
+.page-philosophy { background: #f8f9fa; color: var(--navy-dark); }
+
+/* Hero */
+.phil-hero {
+  display: flex; min-height: 520px; padding-top: 90px;
+}
+.phil-hero-left {
+  flex: 0 0 50%; background: var(--navy-dark); padding: 80px 60px 60px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.phil-hero-right {
+  flex: 1; position: relative; overflow: hidden;
+}
+.phil-hero-right img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.phil-subtitle {
+  color: var(--primary-orange); font-size: 12px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; display: block;
+}
+.phil-title {
+  font-size: clamp(36px, 4vw, 52px); font-weight: 800; color: var(--white);
+  line-height: 1.1; margin-bottom: 32px;
+}
+.phil-title-accent { color: var(--primary-orange); }
+.phil-intro-card {
+  background: rgba(255,255,255,0.08); border-left: 3px solid var(--primary-orange);
+  padding: 16px 20px; border-radius: 8px; margin-bottom: 24px;
+}
+.phil-intro-card p {
+  font-size: 14px; color: var(--text-light); line-height: 1.6; margin: 0;
+}
+.phil-intro-text {
+  font-size: 13.5px; color: var(--text-muted); line-height: 1.6;
+}
+.phil-hero-badge {
+  position: absolute; top: 30px; right: 30px; text-align: right;
+}
+.badge-title {
+  display: block; font-size: 22px; font-weight: 800; color: var(--white);
+  letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.badge-sub {
+  display: block; font-size: 10px; font-weight: 600; color: var(--primary-orange);
+  letter-spacing: 3px; text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Compass Section */
+.phil-compass {
+  text-align: center; padding: 60px 40px 20px; background: var(--white);
+}
+.phil-compass-title {
+  font-size: 28px; font-weight: 800; color: var(--navy-dark); margin-bottom: 12px;
+}
+.phil-compass-desc {
+  font-size: 14px; color: #64748b; margin-bottom: 40px;
+}
+
+/* Letter Blocks */
+.phil-letters {
+  display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+  max-width: 900px; margin: 0 auto 12px;
+}
+.phil-letter {
+  width: 70px; height: 80px; border: 2px solid #cbd5e1; border-radius: 10px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.25s ease; background: var(--white);
+}
+.phil-letter:hover { border-color: var(--primary-orange); transform: translateY(-3px); }
+.phil-letter.active {
+  background: var(--navy-dark); border-color: var(--navy-dark);
+}
+.phil-letter .letter {
+  font-size: 32px; font-weight: 800; color: var(--navy-dark); line-height: 1;
+}
+.phil-letter.active .letter { color: var(--white); }
+.phil-letter .letter-num {
+  font-size: 11px; font-weight: 700; color: var(--primary-orange); margin-top: 4px;
+}
+
+/* Letter Timeline */
+.phil-letter-timeline {
+  position: relative; max-width: 900px; margin: 0 auto; height: 30px;
+  display: flex; align-items: center;
+}
+.phil-letter-line {
+  position: absolute; left: 35px; right: 35px; height: 2px; background: #cbd5e1; z-index: 1;
+}
+.phil-letter-dots {
+  width: 100%; display: flex; justify-content: space-around; position: relative; z-index: 2;
+}
+.phil-ldot {
+  width: 14px; height: 14px; border-radius: 50%; background: var(--white);
+  border: 3px solid #94a3b8; transition: all 0.25s;
+}
+.phil-ldot.active { border-color: var(--primary-orange); background: var(--primary-orange); }
+
+/* Slider Section */
+.phil-slider-section {
+  display: flex; align-items: center; justify-content: center; gap: 20px;
+  max-width: 1100px; margin: 50px auto; padding: 0 20px;
+}
+.phil-arrow {
+  width: 48px; height: 48px; border-radius: 50%; border: 2px solid #cbd5e1;
+  background: var(--white); display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s; flex-shrink: 0; color: #64748b;
+}
+.phil-arrow:hover { border-color: var(--primary-orange); color: var(--primary-orange); }
+.phil-slider-wrapper {
+  display: flex; background: var(--white); border-radius: 16px; overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08); flex: 1; max-width: 900px; min-height: 340px;
+}
+.phil-slider-img {
+  flex: 0 0 38%; position: relative; overflow: hidden;
+}
+.phil-slider-img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.phil-slider-content { flex: 1; padding: 40px 36px; }
+
+/* Slide Content */
+.phil-slide {}
+.slide-num {
+  font-size: 32px; font-weight: 800; color: rgba(245,166,35,0.3); display: block; margin-bottom: 8px;
+}
+.slide-title {
+  font-size: 26px; font-weight: 800; color: var(--navy-dark); margin-bottom: 16px; line-height: 1.2;
+}
+.slide-desc {
+  font-size: 14px; color: #475569; line-height: 1.6; margin-bottom: 28px;
+}
+.slide-feats { display: flex; gap: 24px; }
+.slide-feat {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;
+}
+.slide-feat-icon {
+  width: 44px; height: 44px; border-radius: 50%; background: rgba(245,166,35,0.1);
+  display: flex; align-items: center; justify-content: center; color: var(--primary-orange);
+}
+.slide-feat-icon svg { width: 22px; height: 22px; }
+.slide-feat span { font-size: 11px; font-weight: 600; color: #475569; }
+
+/* Culture Section */
+.phil-culture {
+  text-align: center; padding: 60px 40px 80px; background: var(--white);
+  border-top: 1px solid #e2e8f0;
+}
+.phil-culture-title {
+  font-size: 24px; font-weight: 800; color: var(--navy-dark); margin-bottom: 12px;
+}
+.phil-culture-desc {
+  font-size: 14px; color: #64748b; margin-bottom: 40px;
+}
+.phil-culture-grid {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;
+  max-width: 1100px; margin: 0 auto;
+}
+.phil-cval {
+  width: 90px; text-align: center; cursor: pointer; padding: 12px 6px;
+  border-radius: 10px; transition: all 0.2s;
+}
+.phil-cval:hover { background: #f1f5f9; }
+.phil-cval.active .phil-cval-icon { background: var(--primary-orange); color: var(--white); }
+.phil-cval-icon {
+  width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: #f1f5f9; color: var(--navy-dark); transition: all 0.25s;
+}
+.phil-cval-icon svg { width: 22px; height: 22px; }
+.phil-cval-title {
+  font-size: 10px; font-weight: 700; color: var(--navy-dark); display: block;
+  line-height: 1.3; margin-bottom: 4px;
+}
+.phil-cval-num {
+  font-size: 10px; font-weight: 600; color: var(--primary-orange); display: block;
+}
+
+/* Simple Footer */
+.phil-simple-footer {
+  background: var(--navy-dark); padding: 32px 40px;
+}
+.phil-footer-inner {
+  max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 24px;
+}
+.phil-footer-logo { height: 36px; }
+.phil-footer-divider {
+  width: 1px; height: 36px; background: rgba(255,255,255,0.2);
+}
+.phil-footer-text {
+  font-size: 13px; color: var(--text-muted); line-height: 1.5;
+}
+
+/* Philosophy Responsive */
+@media (max-width: 768px) {
+  .phil-hero { flex-direction: column; }
+  .phil-hero-left { flex: auto; padding: 60px 24px 40px; }
+  .phil-hero-right { height: 260px; }
+  .phil-letters { gap: 6px; }
+  .phil-letter { width: 56px; height: 66px; }
+  .phil-letter .letter { font-size: 24px; }
+  .phil-slider-wrapper { flex-direction: column; }
+  .phil-slider-img { flex: 0 0 200px; }
+  .phil-slider-content { padding: 24px 20px; }
+  .slide-feats { flex-direction: column; gap: 12px; }
+  .phil-footer-inner { flex-direction: column; text-align: center; }
+  .phil-footer-divider { width: 40px; height: 1px; }
+}
+
