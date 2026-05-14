@@ -40,6 +40,22 @@
 
   if (!slideContent || !lettersEl) return; // Not on philosophy page
 
+  // Build culture grid
+  function renderCultureGrid() {
+    if (!cultureGrid) return;
+    cultureGrid.innerHTML = values.map((v, i) => `
+      <div class="phil-cval ${i === currentIndex ? 'active' : ''}" data-index="${i}">
+        <div class="phil-cval-icon">${icons[v.icon]}</div>
+        <span class="phil-cval-title">${v.title}</span>
+        <span class="phil-cval-num">${v.num}</span>
+        <div class="phil-cval-track">
+          <div class="phil-cval-line ${i < currentIndex ? 'passed' : (i === currentIndex ? 'half' : '')}"></div>
+          <div class="phil-cval-dot ${i === currentIndex ? 'active' : (i < currentIndex ? 'passed' : '')}"></div>
+        </div>
+      </div>
+    `).join('');
+  }
+
   // Render slide
   function renderSlide(i) {
     const v = values[i];
@@ -64,6 +80,7 @@
       });
     }
     currentIndex = i;
+    renderCultureGrid();
   }
 
   // Letter clicks
@@ -78,20 +95,12 @@
   if (prevBtn) prevBtn.addEventListener('click', () => renderSlide((currentIndex - 1 + values.length) % values.length));
   if (nextBtn) nextBtn.addEventListener('click', () => renderSlide((currentIndex + 1) % values.length));
 
-  // Build culture grid
+  // Initialize culture grid click events
   if (cultureGrid) {
-    cultureGrid.innerHTML = values.map((v, i) => `
-      <div class="phil-cval ${i === currentIndex ? 'active' : ''}" data-index="${i}">
-        <div class="phil-cval-icon">${icons[v.icon]}</div>
-        <span class="phil-cval-title">${v.title}</span>
-        <span class="phil-cval-num">${v.num}</span>
-      </div>
-    `).join('');
     cultureGrid.addEventListener('click', function(e) {
       const item = e.target.closest('.phil-cval');
       if (item) {
         renderSlide(parseInt(item.dataset.index));
-        cultureGrid.querySelectorAll('.phil-cval').forEach((el, idx) => el.classList.toggle('active', idx === parseInt(item.dataset.index)));
         document.querySelector('.phil-slider-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
