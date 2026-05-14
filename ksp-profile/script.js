@@ -150,5 +150,16 @@
     }
   }
 
+  // ---- Training Gallery Auto Slider ----
+  const gallerySlides = document.querySelectorAll('.tg-large .tg-slide');
+  if (gallerySlides.length > 1) {
+    let currentSlide = 0;
+    setInterval(() => {
+      gallerySlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % gallerySlides.length;
+      gallerySlides[currentSlide].classList.add('active');
+    }, 4500); // switch smoothly every 4.5 seconds
+  }
+
   console.log('%cKSP Consulting | Everything Connected', 'color: #F5A623; font-size: 14px; font-weight: bold;');
 })();
