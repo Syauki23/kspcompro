@@ -161,5 +161,70 @@
     }, 4500); // switch smoothly every 4.5 seconds
   }
 
+  // ---- Testimonials Auto Slider (Ultra Smooth Rotating DOM) ----
+  const testiContainer = document.querySelector('.testimonials-section .testi-cards-container');
+  const testiDots = document.querySelectorAll('.testimonials-section .testi-dot');
+  let isTestiSliding = false;
+
+  if (testiContainer && testiContainer.children.length > 1) {
+    setInterval(() => {
+      if (isTestiSliding) return;
+      
+      // On mobile view where side cards are hidden, instantly cycle
+      if (window.innerWidth <= 768) {
+        const currentCenter = testiContainer.children[1] || testiContainer.children[0];
+        if (currentCenter) currentCenter.classList.remove('active');
+        
+        testiContainer.appendChild(testiContainer.firstElementChild);
+        
+        const newCenter = testiContainer.children[1] || testiContainer.children[0];
+        if (newCenter) {
+          newCenter.classList.add('active');
+          const origIndex = parseInt(newCenter.getAttribute('data-index'), 10);
+          testiDots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === origIndex);
+          });
+        }
+        return;
+      }
+
+      // Desktop buttery smooth transform slide
+      isTestiSliding = true;
+      const firstCard = testiContainer.children[0];
+      const currentCenter = testiContainer.children[1];
+      const nextCenter = testiContainer.children[2];
+      
+      // Calculate distance: layout width of one card + gap
+      const shiftDistance = firstCard.offsetWidth + 24;
+
+      // Enable smooth slide transition
+      testiContainer.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+      testiContainer.style.transform = `translateX(-${shiftDistance}px)`;
+
+      // Animate scaling and fading synchronously
+      if (currentCenter) currentCenter.classList.remove('active');
+      if (nextCenter) {
+        nextCenter.classList.add('active');
+        
+        const origIndex = parseInt(nextCenter.getAttribute('data-index'), 10);
+        testiDots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === origIndex);
+        });
+      }
+
+      // Once slide finishes, silently reset transform and rearrange DOM
+      setTimeout(() => {
+        testiContainer.style.transition = 'none';
+        testiContainer.style.transform = 'translateX(0)';
+        testiContainer.appendChild(firstCard);
+        
+        setTimeout(() => {
+          isTestiSliding = false;
+        }, 50);
+      }, 500);
+
+    }, 4000); // Slide every 4 seconds
+  }
+
   console.log('%cKSP Consulting | Everything Connected', 'color: #F5A623; font-size: 14px; font-weight: bold;');
 })();

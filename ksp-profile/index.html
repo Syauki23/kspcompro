@@ -394,11 +394,9 @@
     </div>
 
     <div class="testi-carousel-wrapper">
-      <button class="testi-nav-btn prev" aria-label="Previous testimonial">&lt;</button>
-      
       <div class="testi-cards-container">
         <!-- Card 1 -->
-        <div class="testi-card">
+        <div class="testi-card" data-index="0">
           <div class="testi-quote-icon">“</div>
           <p class="testi-text">"KSP Consulting provided practical and highly professional operational solutions for our maritime operations."</p>
           <div class="testi-author">
@@ -413,7 +411,7 @@
         </div>
 
         <!-- Card 2 (Active/Center) -->
-        <div class="testi-card active">
+        <div class="testi-card active" data-index="1">
           <div class="testi-quote-icon">“</div>
           <p class="testi-text">"Their training and assessment approach helped improve both operational performance and safety awareness."</p>
           <div class="testi-author">
@@ -428,7 +426,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="testi-card">
+        <div class="testi-card" data-index="2">
           <div class="testi-quote-icon">“</div>
           <p class="testi-text">"Professional team, deep expertise, and responsive support throughout our TMSA implementation process."</p>
           <div class="testi-author">
@@ -442,14 +440,11 @@
           </div>
         </div>
       </div>
-
-      <button class="testi-nav-btn next" aria-label="Next testimonial">&gt;</button>
     </div>
 
     <div class="testi-pagination">
+      <span class="testi-dot"></span>
       <span class="testi-dot active"></span>
-      <span class="testi-dot"></span>
-      <span class="testi-dot"></span>
       <span class="testi-dot"></span>
     </div>
 
