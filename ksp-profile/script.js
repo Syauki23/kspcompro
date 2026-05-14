@@ -97,7 +97,8 @@
 
   // ---- Consultation Modal Logic ----
   const consultModal = document.getElementById('modal-consultation');
-  const consultTriggers = document.querySelectorAll('.btn-consult, #consult-btn, a[href="#contact"], a[id*="contact"], a[href$="#contact"]');
+  const consultTriggers = document.querySelectorAll('.btn-consult, #consult-btn');
+  const navContactLinks = document.querySelectorAll('a[href="#contact"], a[id*="contact"], a[href$="#contact"]');
   
   if (consultModal) {
     consultTriggers.forEach(trigger => {
@@ -105,6 +106,20 @@
         e.preventDefault();
         consultModal.classList.add('show');
         document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const physicalContactSection = document.getElementById('contact');
+    navContactLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (physicalContactSection) {
+          e.preventDefault();
+          physicalContactSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          e.preventDefault();
+          consultModal.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        }
       });
     });
 
