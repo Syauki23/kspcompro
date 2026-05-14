@@ -2668,7 +2668,7 @@ ul {
 
 .cp2-logo-card:hover img {
   opacity: 1;
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(340deg);
+  filter: none;
 }
 
 /* Trust Strip */
