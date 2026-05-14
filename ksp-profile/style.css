@@ -2448,12 +2448,295 @@ ul {
   .phil-arrow { display: none; } /* Hide arrows on mobile, rely on swipe or clicks */
 }
 
+
 /* =========================================
-   CLIENTS & PARTNERS SECTION
+   CLIENTS & PARTNERS — REDESIGN v2
    ========================================= */
 .clients-partners {
+  background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.clients-partners::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(ellipse at 20% 50%, rgba(245,166,35,0.06) 0%, transparent 60%),
+                    radial-gradient(ellipse at 80% 20%, rgba(0,100,200,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cp2-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.cp2-header {
+  text-align: center;
+  padding: 80px 40px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cp2-badge {
+  display: inline-block;
+  background: rgba(245,166,35,0.12);
+  color: var(--primary-orange);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(245,166,35,0.25);
+  margin-bottom: 20px;
+}
+
+.cp2-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+
+.cp2-title-accent {
+  background: linear-gradient(135deg, #F5A623 0%, #f7c35f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cp2-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* Stats */
+.cp2-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px 0;
+  backdrop-filter: blur(8px);
+}
+
+.cp2-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.cp2-stat-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary-orange);
+  line-height: 1;
+}
+
+.cp2-stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.5px;
+}
+
+.cp2-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Marquee Section */
+.cp2-marquee-section {
+  padding: 0 0 8px;
+}
+
+.cp2-marquee-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-top: 32px;
+}
+
+.cp2-marquee-track-outer {
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0;
+}
+
+.cp2-marquee-track-outer::before,
+.cp2-marquee-track-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cp2-marquee-track-outer::before {
+  left: 0;
+  background: linear-gradient(to right, #0a1628, transparent);
+}
+
+.cp2-marquee-track-outer::after {
+  right: 0;
+  background: linear-gradient(to left, #0a1628, transparent);
+}
+
+.cp2-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+}
+
+.cp2-ltr {
+  animation: cp2MarqueeLTR 28s linear infinite;
+}
+
+.cp2-rtl {
+  animation: cp2MarqueeRTL 22s linear infinite;
+}
+
+.cp2-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes cp2MarqueeLTR {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes cp2MarqueeRTL {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Logo Cards */
+.cp2-logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px 28px;
+  min-width: 160px;
+  height: 76px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  flex-shrink: 0;
+  backdrop-filter: blur(4px);
+}
+
+.cp2-logo-card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(245,166,35,0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.cp2-logo-card img {
+  max-width: 120px;
+  max-height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.55;
+  transition: all 0.3s;
+}
+
+.cp2-logo-card:hover img {
+  opacity: 1;
+  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(340deg);
+}
+
+/* Trust Strip */
+.cp2-trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 40px;
+  padding: 32px 40px;
+}
+
+.cp2-trust-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.45);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+  padding: 0 20px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.cp2-trust-item:last-child {
+  border-right: none;
+}
+
+.cp2-trust-item:hover {
+  color: var(--primary-orange);
+}
+
+.cp2-trust-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cp2-title { font-size: 38px; }
+  .cp2-stats { padding: 20px 0; }
+}
+
+@media (max-width: 768px) {
+  .cp2-header { padding: 60px 24px 40px; }
+  .cp2-title { font-size: 30px; }
+  .cp2-desc { font-size: 14px; }
+  .cp2-stats { flex-wrap: wrap; gap: 0; }
+  .cp2-stat { flex: 0 0 50%; padding: 16px 0; }
+  .cp2-stat-divider { display: none; }
+  .cp2-trust-strip { flex-direction: column; gap: 16px; padding: 24px; }
+  .cp2-trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 12px 0; width: 100%; }
+  .cp2-trust-item:last-child { border-bottom: none; }
+}
+
+/* =========================================
+   OLD CLIENTS & PARTNERS — kept for reference (hidden via new section)
+   ========================================= */
+.clients-partners-old {
   background-color: #ffffff;
   padding: 80px 40px;
+
   color: var(--navy-dark);
   font-family: var(--font-main);
   position: relative;
