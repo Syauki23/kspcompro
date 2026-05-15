@@ -332,6 +332,20 @@
     renderSlide(0);
   }
 
+  // =========================================
+  // DYNAMIC ZOOM SCALING FOR LARGE MONITORS
+  // =========================================
+  function adjustZoomForLargeMonitors() {
+    if (window.innerWidth > 1440) {
+      document.documentElement.style.zoom = window.innerWidth / 1440;
+    } else {
+      document.documentElement.style.zoom = 1;
+    }
+  }
+
+  window.addEventListener('resize', adjustZoomForLargeMonitors);
+  adjustZoomForLargeMonitors(); // Initial run
+
   console.log('%cKSP Consulting | Everything Connected', 'color: #F5A623; font-size: 14px; font-weight: bold;');
 })();
 
