@@ -162,63 +162,54 @@
   let isTestiSliding = false;
 
   if (testiContainer && testiContainer.children.length > 1) {
-    setInterval(() => {
-      if (isTestiSliding) return;
+    const testiCards = Array.from(testiContainer.children);
+    let activeIdx = 2; // Initial active card
+
+    const updateCarousel = () => {
+      const cardWidth = 550; // Match CSS flex-basis
+      const gap = 30; // Match CSS gap
+      const wrapperWidth = testiContainer.parentElement.offsetWidth;
       
-      // On mobile view where side cards are hidden, instantly cycle
-      if (window.innerWidth <= 768) {
-        const currentCenter = testiContainer.children[1] || testiContainer.children[0];
-        if (currentCenter) currentCenter.classList.remove('active');
-        
-        testiContainer.appendChild(testiContainer.firstElementChild);
-        
-        const newCenter = testiContainer.children[1] || testiContainer.children[0];
-        if (newCenter) {
-          newCenter.classList.add('active');
-          const origIndex = parseInt(newCenter.getAttribute('data-index'), 10);
-          testiDots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === origIndex);
-          });
-        }
-        return;
-      }
+      // Calculate centering offset
+      // (WrapperCenter) - (ActiveCardCenter) - (Cumulative width of previous cards)
+      const offset = (wrapperWidth / 2) - (cardWidth / 2) - (activeIdx * (cardWidth + gap));
 
-      // Desktop buttery smooth transform slide
-      isTestiSliding = true;
-      const firstCard = testiContainer.children[0];
-      const currentCenter = testiContainer.children[1];
-      const nextCenter = testiContainer.children[2];
-      
-      // Calculate distance: layout width of one card + gap
-      const shiftDistance = firstCard.offsetWidth + 24;
+      testiContainer.style.transform = `translateX(${offset}px)`;
 
-      // Enable smooth slide transition
-      testiContainer.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-      testiContainer.style.transform = `translateX(-${shiftDistance}px)`;
+      testiCards.forEach((card, idx) => {
+        card.classList.toggle('active', idx === activeIdx);
+      });
 
-      // Animate scaling and fading synchronously
-      if (currentCenter) currentCenter.classList.remove('active');
-      if (nextCenter) {
-        nextCenter.classList.add('active');
-        
-        const origIndex = parseInt(nextCenter.getAttribute('data-index'), 10);
-        testiDots.forEach((dot, idx) => {
-          dot.classList.toggle('active', idx === origIndex);
-        });
-      }
+      testiDots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIdx);
+      });
+    };
 
-      // Once slide finishes, silently reset transform and rearrange DOM
-      setTimeout(() => {
-        testiContainer.style.transition = 'none';
-        testiContainer.style.transform = 'translateX(0)';
-        testiContainer.appendChild(firstCard);
-        
-        setTimeout(() => {
-          isTestiSliding = false;
-        }, 50);
-      }, 500);
+    // Initial run
+    setTimeout(updateCarousel, 100);
 
-    }, 4000); // Slide every 4 seconds
+    // Auto slide
+    let testiInterval = setInterval(() => {
+      activeIdx = (activeIdx + 1) % testiCards.length;
+      updateCarousel();
+    }, 5000);
+
+    // Resize listener
+    window.addEventListener('resize', updateCarousel);
+
+    // Manual interaction (Dots)
+    testiDots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        clearInterval(testiInterval);
+        activeIdx = idx;
+        updateCarousel();
+        // Restart interval
+        testiInterval = setInterval(() => {
+          activeIdx = (activeIdx + 1) % testiCards.length;
+          updateCarousel();
+        }, 5000);
+      });
+    });
   }
 
 
