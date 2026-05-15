@@ -3277,19 +3277,20 @@ ul {
    CLIENTS & PARTNERS — REDESIGN v2
    ========================================= */
 .clients-partners {
-  background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
+  background: #ffffff;
   padding: 0;
   overflow: hidden;
   position: relative;
   z-index: 10;
+  border-top: 1px solid #f1f5f9;
 }
+
+
 
 .clients-partners::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(ellipse at 20% 50%, rgba(245,166,35,0.06) 0%, transparent 60%),
-                    radial-gradient(ellipse at 80% 20%, rgba(0,100,200,0.08) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -3301,7 +3302,7 @@ ul {
 /* Header */
 .cp2-header {
   text-align: center;
-  padding: 80px 40px 60px;
+  padding: 140px 40px 60px; /* Increased padding-top to avoid navbar overlap */
   max-width: 800px;
   margin: 0 auto;
 }
@@ -3310,9 +3311,9 @@ ul {
   display: inline-block;
   background: rgba(245,166,35,0.12);
   color: var(--primary-orange);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 2.5px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 6px 18px;
   border-radius: 100px;
@@ -3321,11 +3322,11 @@ ul {
 }
 
 .cp2-title {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 800;
-  color: #ffffff;
-  line-height: 1.1;
-  letter-spacing: -1.5px;
+  color: var(--navy-dark);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
   margin-bottom: 16px;
 }
 
@@ -3337,8 +3338,8 @@ ul {
 }
 
 .cp2-desc {
-  font-size: 16px;
-  color: rgba(255,255,255,0.55);
+  font-size: 15px;
+  color: #475569;
   line-height: 1.7;
   margin-bottom: 40px;
 }
@@ -3349,11 +3350,10 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 0;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 24px 0;
-  backdrop-filter: blur(8px);
 }
 
 .cp2-stat {
@@ -3374,14 +3374,14 @@ ul {
 .cp2-stat-label {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255,255,255,0.45);
+  color: #64748b;
   letter-spacing: 0.5px;
 }
 
 .cp2-stat-divider {
   width: 1px;
   height: 40px;
-  background: rgba(255,255,255,0.1);
+  background: #e2e8f0;
 }
 
 /* Marquee Section */
@@ -3394,7 +3394,7 @@ ul {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.2);
+  color: #94a3b8;
   text-transform: uppercase;
   margin-bottom: 20px;
   padding-top: 32px;
@@ -3419,12 +3419,12 @@ ul {
 
 .cp2-marquee-track-outer::before {
   left: 0;
-  background: linear-gradient(to right, #0a1628, transparent);
+  background: linear-gradient(to right, #ffffff, transparent);
 }
 
 .cp2-marquee-track-outer::after {
   right: 0;
-  background: linear-gradient(to left, #0a1628, transparent);
+  background: linear-gradient(to left, #ffffff, transparent);
 }
 
 .cp2-marquee-track {
@@ -3466,27 +3466,28 @@ ul {
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
   padding: 16px 28px;
-  min-width: 160px;
-  height: 76px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  flex-shrink: 0;
-  backdrop-filter: blur(4px);
+  width: 180px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
 .cp2-logo-card:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(245,166,35,0.35);
+  border-color: var(--primary-orange);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 }
 
 .cp2-logo-card img {
   max-width: 120px;
   max-height: 44px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.55;
+  filter: grayscale(1) opacity(0.7);
+  opacity: 0.7;
   transition: all 0.3s;
 }
 
@@ -3501,7 +3502,7 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid #e2e8f0;
   margin-top: 40px;
   padding: 32px 40px;
 }
@@ -3512,13 +3513,13 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: rgba(255,255,255,0.45);
+  color: #64748b;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.3px;
   transition: color 0.2s;
   padding: 0 20px;
-  border-right: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid #e2e8f0;
 }
 
 .cp2-trust-item:last-child {
@@ -3991,27 +3992,10 @@ ul {
    TESTIMONIALS SECTION
    ========================================= */
 .testimonials-section {
-  position: relative;
-  padding: 100px 40px;
   background-color: #f8fafc;
-  overflow: hidden;
+  padding: 100px 40px;
+  position: relative;
   z-index: 10;
-}
-
-.testi-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: url('assets/bg-ship.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.testi-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.92) 40%, rgba(255,255,255,0.6) 100%);
 }
 
 .testi-container {
@@ -4020,14 +4004,15 @@ ul {
 }
 
 .testi-header {
-  margin-bottom: 50px;
-  max-width: 600px;
+  text-align: center;
+  margin: 0 auto 50px;
+  max-width: 800px;
 }
 
 .testi-subtitle {
   display: block;
   color: var(--primary-orange);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -4035,11 +4020,11 @@ ul {
 }
 
 .testi-title {
-  font-size: 42px;
+  font-size: 36px;
   font-weight: 800;
   color: var(--navy-dark);
-  line-height: 1.1;
-  letter-spacing: -1px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
   margin-bottom: 16px;
 }
 
@@ -4470,7 +4455,7 @@ ul {
    HOME: CORE SERVICES HIGHLIGHTS
    ========================================= */
 .home-services-section {
-  background-color: var(--white);
+  background-color: #ffffff;
   padding: 100px 40px 40px;
   position: relative;
   z-index: 10;
