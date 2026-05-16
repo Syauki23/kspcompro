@@ -49,299 +49,256 @@
   <!-- =========================================
        MAIN BLOG CONTAINER (Top Controls + 3 Columns Layout)
        ========================================= -->
-  <main class="blog-main-layout">
+  <main class="modern-blog-layout">
     
-    <!-- TOP BAR CONTROLS (Search & Category Dropdown on Top Right) -->
-    <div class="blog-top-controls">
-      <div class="blog-spacer-left"></div>
-      <div class="blog-search-filter-wrap">
-        <div class="blog-search-box">
+    <!-- FEATURED HERO SECTION -->
+    <section class="blog-hero">
+      <div class="blog-hero-slider">
+        <div class="hero-slide active">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80" alt="Featured Article" class="hero-bg">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="hero-meta">
+              <span class="hero-cat">Maritime Insights</span>
+              <span class="hero-read-time"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 8 min read</span>
+            </div>
+            <h1 class="hero-title">Building Resilient Maritime Operations in an Era of Complexity</h1>
+            <p class="hero-excerpt">Exploring practical strategies to strengthen operational resilience, manage risks, and ensure sustainable performance across the maritime value chain.</p>
+            <div class="hero-footer">
+              <span class="hero-date">May 20, 2025</span>
+              <a href="#" class="btn-hero-read">Read Full Article &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY TOP CONTROLS -->
+    <div class="blog-sticky-bar">
+      <div class="sticky-bar-container">
+        <!-- Categories Scrollable Row -->
+        <div class="category-pills">
+          <button class="cat-pill active">All Categories</button>
+          <button class="cat-pill">Maritime Insights</button>
+          <button class="cat-pill">Safety & Compliance</button>
+          <button class="cat-pill">Operational Excellence</button>
+          <button class="cat-pill">Human Factors</button>
+          <button class="cat-pill">Leadership</button>
+          <button class="cat-pill">Workshop Recaps</button>
+          <button class="cat-pill">Industry Trends</button>
+        </div>
+        
+        <!-- Search System -->
+        <div class="modern-search-box">
           <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <input type="text" placeholder="Search insights...">
-        </div>
-        <div class="blog-category-dropdown">
-          <select>
-            <option>All Categories</option>
-            <option>Maritime Insights</option>
-            <option>Safety & Compliance</option>
-            <option>Operational Excellence</option>
-          </select>
-          <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
       </div>
     </div>
 
-    <!-- 3 COLUMNS GRID -->
-    <div class="blog-grid-wrapper">
-      
-      <!-- COLUMN 1: LEFT SIDEBAR -->
-      <aside class="blog-sidebar-left">
-        <!-- Main Intro Title -->
-        <div class="blog-intro-block">
-          <span class="blog-subtitle">KSP INSIGHTS</span>
-          <h1 class="blog-maintitle">Ideas that drive<br>better decisions.</h1>
-          <p class="blog-desc">In-depth perspectives and practical insights about maritime operations, safety, leadership, and organizational excellence.</p>
-        </div>
-
-        <!-- Categories Box -->
-        <div class="blog-widget categories-widget">
-          <h3 class="widget-title">CATEGORIES</h3>
-          <ul class="category-list">
-            <li class="active">
-              <a href="#"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg> Maritime Insights</a>
-              <span class="cat-count">14</span>
-            </li>
-            <li>
-              <a href="#"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Safety & Compliance</a>
-              <span class="cat-count">12</span>
-            </li>
-            <li>
-              <a href="#"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> Operational Excellence</a>
-              <span class="cat-count">11</span>
-            </li>
-            <li>
-              <a href="#"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Human Factors</a>
-              <span class="cat-count">9</span>
-            </li>
-            <li>
-              <a href="#"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Leadership</a>
-              <span class="cat-count">8</span>
-            </li>
-            <li>
-              <a href="#"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> Workshop Recaps</a>
-              <span class="cat-count">7</span>
-            </li>
-            <li>
-              <a href="#"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> Industry Trends</a>
-              <span class="cat-count">10</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Newsletter Widget -->
-        <div class="blog-widget newsletter-widget">
-          <h4>Knowledge that moves you forward.</h4>
-          <p>Stay updated with the latest insights and practical strategies from our experts.</p>
-          <button class="btn-newsletter" type="button">Subscribe to Newsletter <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
-        </div>
-
-        <!-- Popular Tags Widget -->
-        <div class="blog-widget tags-widget">
-          <h3 class="widget-title">POPULAR TAGS</h3>
-          <div class="tags-wrapper">
-            <a href="#" class="blog-tag">TMSA</a>
-            <a href="#" class="blog-tag">SIRE 2.0</a>
-            <a href="#" class="blog-tag">Hazard</a>
-            <a href="#" class="blog-tag">Risk Management</a>
-            <a href="#" class="blog-tag">Maritime Safety</a>
-            <a href="#" class="blog-tag">Leadership</a>
-            <a href="#" class="blog-tag">ISM Code</a>
-            <a href="#" class="blog-tag">Due Diligence</a>
-          </div>
-        </div>
-      </aside>
-
-      <!-- COLUMN 2: CENTER MAIN CONTENT -->
-      <section class="blog-content-center">
+    <!-- MAIN GRID SECTION (2 COLUMNS) -->
+    <section class="blog-content-wrapper">
+      <div class="blog-container">
         
-        <!-- FEATURED ARTICLE SLIDER -->
-        <div class="blog-section-header">
-          <span class="section-badge">FEATURED ARTICLE</span>
-        </div>
-
-        <div class="featured-article-slider">
-          <button class="slider-btn prev-btn" aria-label="Previous featured article"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-          <button class="slider-btn next-btn" aria-label="Next featured article"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+        <!-- LEFT: Articles Grid -->
+        <div class="articles-grid-area">
+          <div class="section-heading">
+            <h2>Latest Insights</h2>
+            <p>Discover our newest perspectives on maritime industry trends and operations.</p>
+          </div>
           
-          <!-- Slider Track -->
-          <div class="slider-track">
-            <div class="featured-slide">
-              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="Featured Article Image" class="featured-bg">
-              <div class="featured-overlay"></div>
-              <div class="featured-content">
-                <span class="category-tag">MARITIME INSIGHTS</span>
-                <h2>Building Resilient Maritime Operations in an Era of Complexity</h2>
-                <p>Exploring practical strategies to strengthen operational resilience, manage risks, and ensure sustainable performance across the maritime value chain.</p>
-                <div class="article-meta-info">
-                  <span><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 8 min read</span>
-                  <span><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> May 20, 2025</span>
+          <div class="modern-articles-grid">
+            <!-- Article 1 -->
+            <article class="modern-card">
+              <div class="modern-card-img">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Article Image">
+                <div class="modern-card-badges">
+                  <span class="badge-cat color-safety">Safety & Compliance</span>
+                  <span class="badge-time">6 min read</span>
                 </div>
-                <a href="#" class="btn-read-article">Read Article &rarr;</a>
               </div>
-            </div>
+              <div class="modern-card-content">
+                <h3 class="modern-card-title"><a href="#">Enhancing Safety Culture Through Human-Centered Approach</a></h3>
+                <p class="modern-card-excerpt">Why safety culture transformation must start with people, not just processes.</p>
+                <div class="modern-card-footer">
+                  <span class="modern-card-date">May 18, 2025</span>
+                  <a href="#" class="modern-card-link">Read More &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="modern-card">
+              <div class="modern-card-img">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Article Image">
+                <div class="modern-card-badges">
+                  <span class="badge-cat color-ops">Operational Excellence</span>
+                  <span class="badge-time">7 min read</span>
+                </div>
+              </div>
+              <div class="modern-card-content">
+                <h3 class="modern-card-title"><a href="#">Data-Driven Decision Making in Maritime Operations</a></h3>
+                <p class="modern-card-excerpt">Leveraging data and technology to improve visibility, efficiency, and operational outcomes.</p>
+                <div class="modern-card-footer">
+                  <span class="modern-card-date">May 15, 2025</span>
+                  <a href="#" class="modern-card-link">Read More &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="modern-card">
+              <div class="modern-card-img">
+                <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&w=800&q=80" alt="Article Image">
+                <div class="modern-card-badges">
+                  <span class="badge-cat color-workshop">Workshop Recaps</span>
+                  <span class="badge-time">5 min read</span>
+                </div>
+              </div>
+              <div class="modern-card-content">
+                <h3 class="modern-card-title"><a href="#">Key Takeaways from TMSA Implementation Workshop</a></h3>
+                <p class="modern-card-excerpt">Highlights and lessons learned from our latest TMSA training and implementation program.</p>
+                <div class="modern-card-footer">
+                  <span class="modern-card-date">May 12, 2025</span>
+                  <a href="#" class="modern-card-link">Read More &rarr;</a>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article 4 -->
+            <article class="modern-card">
+              <div class="modern-card-img">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Article Image">
+                <div class="modern-card-badges">
+                  <span class="badge-cat color-trends">Industry Trends</span>
+                  <span class="badge-time">5 min read</span>
+                </div>
+              </div>
+              <div class="modern-card-content">
+                <h3 class="modern-card-title"><a href="#">Navigating Regulatory Changes: What Operators Need to Know</a></h3>
+                <p class="modern-card-excerpt">A comprehensive guide on adapting to the new environmental regulations in the maritime sector.</p>
+                <div class="modern-card-footer">
+                  <span class="modern-card-date">May 8, 2025</span>
+                  <a href="#" class="modern-card-link">Read More &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="modern-card">
+              <div class="modern-card-img">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Article Image">
+                <div class="modern-card-badges">
+                  <span class="badge-cat color-human">Human Factors</span>
+                  <span class="badge-time">6 min read</span>
+                </div>
+              </div>
+              <div class="modern-card-content">
+                <h3 class="modern-card-title"><a href="#">Building Operational Excellence Through Standardization</a></h3>
+                <p class="modern-card-excerpt">How standardizing procedures can reduce human error and improve overall performance.</p>
+                <div class="modern-card-footer">
+                  <span class="modern-card-date">May 2, 2025</span>
+                  <a href="#" class="modern-card-link">Read More &rarr;</a>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article 6 -->
+            <article class="modern-card">
+              <div class="modern-card-img">
+                <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=800&q=80" alt="Article Image">
+                <div class="modern-card-badges">
+                  <span class="badge-cat color-leadership">Leadership</span>
+                  <span class="badge-time">7 min read</span>
+                </div>
+              </div>
+              <div class="modern-card-content">
+                <h3 class="modern-card-title"><a href="#">Risk Assessment Best Practices for Maritime Leaders</a></h3>
+                <p class="modern-card-excerpt">Effective risk management strategies for leadership in high-stakes operational environments.</p>
+                <div class="modern-card-footer">
+                  <span class="modern-card-date">May 5, 2025</span>
+                  <a href="#" class="modern-card-link">Read More &rarr;</a>
+                </div>
+              </div>
+            </article>
+
           </div>
-
-          <!-- Slider Pagination Dots -->
-          <div class="slider-pagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-
-        <!-- LATEST ARTICLES GRID -->
-        <div class="blog-section-header header-with-link">
-          <span class="section-badge">LATEST ARTICLES</span>
-          <a href="#" class="view-all-link">View all articles &rarr;</a>
-        </div>
-
-        <div class="latest-articles-grid">
-          <!-- Article Card 1 -->
-          <div class="article-card">
-            <div class="card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Article Image">
-              <span class="read-time-badge">6 min read</span>
-            </div>
-            <div class="card-body">
-              <span class="cat-label">SAFETY & COMPLIANCE</span>
-              <h3>Enhancing Safety Culture Through Human-Centered Approach</h3>
-              <p>Why safety culture transformation must start with people, not just processes.</p>
-              <span class="date-label">May 18, 2025</span>
-            </div>
-          </div>
-
-          <!-- Article Card 2 -->
-          <div class="article-card">
-            <div class="card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Article Image">
-              <span class="read-time-badge">7 min read</span>
-            </div>
-            <div class="card-body">
-              <span class="cat-label">OPERATIONAL EXCELLENCE</span>
-              <h3>Data-Driven Decision Making in Maritime Operations</h3>
-              <p>Leveraging data and technology to improve visibility, efficiency, and operational outcomes.</p>
-              <span class="date-label">May 15, 2025</span>
-            </div>
-          </div>
-
-          <!-- Article Card 3 -->
-          <div class="article-card">
-            <div class="card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&w=600&q=80" alt="Article Image">
-              <span class="read-time-badge">5 min read</span>
-            </div>
-            <div class="card-body">
-              <span class="cat-label">WORKSHOP RECAPS</span>
-              <h3>Key Takeaways from TMSA Implementation Workshop</h3>
-              <p>Highlights and lessons learned from our latest TMSA training and implementation program.</p>
-              <span class="date-label">May 12, 2025</span>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- COLUMN 3: RIGHT SIDEBAR -->
-      <aside class="blog-sidebar-right">
-        
-        <div class="blog-section-header">
-          <span class="section-badge">LATEST ARTICLES</span>
-        </div>
-
-        <!-- Latest List items -->
-        <div class="sidebar-latest-list">
           
-          <div class="latest-list-item">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=150&q=80" alt="Thumb">
-            <div class="item-details">
-              <h4>The Future of Maritime Workforce: Skills, Safety, and Adaptability</h4>
-              <span>May 10, 2025 &bull; 6 min read</span>
-            </div>
+          <div class="blog-load-more">
+            <button class="btn-load-more">Load More Articles</button>
           </div>
-
-          <div class="latest-list-item">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=150&q=80" alt="Thumb">
-            <div class="item-details">
-              <h4>Navigating Regulatory Changes: What Operators Need to Know</h4>
-              <span>May 8, 2025 &bull; 5 min read</span>
-            </div>
-          </div>
-
-          <div class="latest-list-item">
-            <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=150&q=80" alt="Thumb">
-            <div class="item-details">
-              <h4>Risk Assessment Best Practices for Maritime and Industrial Operations</h4>
-              <span>May 5, 2025 &bull; 7 min read</span>
-            </div>
-          </div>
-
-          <div class="latest-list-item">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=150&q=80" alt="Thumb">
-            <div class="item-details">
-              <h4>Building Operational Excellence Through Standardization</h4>
-              <span>May 2, 2025 &bull; 6 min read</span>
-            </div>
-          </div>
-
-          <div class="latest-list-item">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=150&q=80" alt="Thumb">
-            <div class="item-details">
-              <h4>Recap: SIRE 2.0 Training and Key Implementation Points</h4>
-              <span>Apr 28, 2025 &bull; 4 min read</span>
-            </div>
-          </div>
-
         </div>
 
-        <a href="#" class="sidebar-view-all">View all articles &rarr;</a>
-
-        <!-- Deep Insights Promo Widget -->
-        <div class="blog-promo-card">
-          <div class="promo-header">
-            <div class="promo-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
-            <h3>Deep insights.<br>Real impact.</h3>
+        <!-- RIGHT: Sidebar -->
+        <aside class="blog-sidebar">
+          
+          <!-- Newsletter Widget -->
+          <div class="sidebar-widget widget-newsletter">
+            <div class="widget-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <h3>Knowledge that moves you forward.</h3>
+            <p>Stay updated with the latest insights and practical strategies from our experts.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault();">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Subscribe</button>
+            </form>
           </div>
-          <p>Our articles are written by industry practitioners with real-world experience and a passion for sharing knowledge.</p>
-          <a href="#" class="btn-explore-insights">Explore All Insights &rarr;</a>
-        </div>
 
-      </aside>
+          <!-- Popular Tags Widget -->
+          <div class="sidebar-widget widget-tags">
+            <h4 class="widget-title">Popular Tags</h4>
+            <div class="tags-cloud">
+              <a href="#" class="tag-link">TMSA</a>
+              <a href="#" class="tag-link">SIRE 2.0</a>
+              <a href="#" class="tag-link">Hazard</a>
+              <a href="#" class="tag-link">Risk Management</a>
+              <a href="#" class="tag-link">Maritime Safety</a>
+              <a href="#" class="tag-link">Leadership</a>
+              <a href="#" class="tag-link">ISM Code</a>
+              <a href="#" class="tag-link">Due Diligence</a>
+            </div>
+          </div>
+          
+          <!-- Trending Articles Widget -->
+          <div class="sidebar-widget widget-trending">
+            <h4 class="widget-title">Trending Now</h4>
+            <div class="trending-list">
+              <a href="#" class="trending-item">
+                <div class="trending-number">01</div>
+                <div class="trending-info">
+                  <h5>The Future of Maritime Workforce: Skills, Safety, and Adaptability</h5>
+                  <span>May 10, 2025</span>
+                </div>
+              </a>
+              <a href="#" class="trending-item">
+                <div class="trending-number">02</div>
+                <div class="trending-info">
+                  <h5>Recap: SIRE 2.0 Training and Key Implementation Points</h5>
+                  <span>Apr 28, 2025</span>
+                </div>
+              </a>
+              <a href="#" class="trending-item">
+                <div class="trending-number">03</div>
+                <div class="trending-info">
+                  <h5>Building Operational Excellence Through Standardization</h5>
+                  <span>May 2, 2025</span>
+                </div>
+              </a>
+            </div>
+          </div>
 
-    </div>
+        </aside>
+
+      </div>
+    </section>
 
   </main>
 
   <!-- =========================================
        BOTTOM HIGHLIGHTS STRIP (Persis seperti gambar referensi)
        ========================================= -->
-  <section class="blog-bottom-strip">
-    <div class="strip-container">
-      
-      <div class="strip-item">
-        <div class="strip-icon"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.8" fill="none"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
-        <div class="strip-text">
-          <h4>Practical Insights</h4>
-          <p>Actionable strategies based on real-world experience</p>
-        </div>
-      </div>
 
-      <div class="strip-item">
-        <div class="strip-icon"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.8" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg></div>
-        <div class="strip-text">
-          <h4>Trusted Expertise</h4>
-          <p>Content created by consultants and industry professionals</p>
-        </div>
-      </div>
-
-      <div class="strip-item">
-        <div class="strip-icon"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.8" fill="none"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
-        <div class="strip-text">
-          <h4>Knowledge-Driven</h4>
-          <p>Deep, research-backed perspectives for better decisions</p>
-        </div>
-      </div>
-
-      <div class="strip-item">
-        <div class="strip-icon"><svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.8" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-        <div class="strip-text">
-          <h4>Built for Leaders</h4>
-          <p>Designed for professionals who drive organizational excellence</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <!-- =========================================
        MAIN FOOTER (STANDARD)
