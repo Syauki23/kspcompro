@@ -1,0 +1,676 @@
+/* ==========================================================================
+   PODCAST PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------
+   PODCAST HERO (DARK THEME)
+   -------------------------------------------------- */
+.pod-hero {
+  background: linear-gradient(135deg, #0b0f19 0%, #1a2333 100%);
+  color: #ffffff;
+  padding: 60px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pod-hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pod-hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  padding-top: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.pod-hero-left {
+  flex: 1;
+  max-width: 500px;
+  padding-top: 20px;
+}
+
+.pod-hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #8ab4f8;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.pod-hero-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #ffffff, #a0aec0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pod-hero-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #a0aec0;
+  margin-bottom: 40px;
+}
+
+.pod-hero-btns {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-pod-youtube, .btn-pod-spotify {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-pod-youtube {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.btn-pod-youtube:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.btn-pod-youtube svg {
+  color: #ff0000;
+}
+
+.btn-pod-spotify {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-pod-spotify:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-pod-spotify svg {
+  color: #1ed760;
+}
+
+/* Featured Episode (Right Side) */
+.pod-hero-right {
+  flex: 1.2;
+  position: relative;
+}
+
+.pod-hero-feat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #8ab4f8;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.pod-feat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+.pod-feat-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.pod-feat-video-wrapper:hover #featured-thumbnail {
+  transform: scale(1.05);
+}
+
+#featured-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pod-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.pod-feat-video-wrapper:hover .pod-play-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.play-btn-circle {
+  width: 80px;
+  height: 80px;
+  background: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pod-feat-video-wrapper:hover .play-btn-circle {
+  transform: scale(1.1);
+  animation: pulse-red-large 1.5s infinite;
+}
+
+.play-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 25px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-left: 6px;
+}
+
+@keyframes pulse-red-large {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 25px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+.pod-feat-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.pod-feat-content {
+  padding: 24px;
+}
+
+.pod-ep-num {
+  font-size: 0.85rem;
+  color: #1ed760;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.pod-feat-content h3 {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.pod-meta {
+  display: flex;
+  gap: 20px;
+  color: #a0aec0;
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+.pod-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pod-feat-desc-block {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.pod-feat-desc-block p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.pod-host {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+.pod-host img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.host-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.host-with {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.host-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.host-title {
+  font-size: 0.85rem;
+  color: #8ab4f8;
+}
+
+/* --------------------------------------------------
+   EPISODE LISTS (WHITE THEME)
+   -------------------------------------------------- */
+.pod-playlists {
+  background-color: #f8fafc;
+  padding: 100px 0;
+}
+
+.pod-playlist-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.pod-cat-section {
+  margin-bottom: 60px;
+}
+
+.pod-cat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 15px;
+}
+
+.pod-cat-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pod-cat-title h2 {
+  font-size: 1.8rem;
+  color: #0f172a;
+  font-weight: 700;
+  margin: 0;
+}
+
+.view-all {
+  font-size: 0.95rem;
+  color: #0056b3;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.view-all:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
+
+.pod-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+}
+
+.pod-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f1f5f9;
+  cursor: pointer;
+}
+
+.pod-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.pod-card-img {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+  background-color: #e2e8f0;
+}
+
+.pod-card-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pod-card:hover .pod-card-img img {
+  transform: scale(1.05);
+}
+
+.pod-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* Small Play Animation Overlay */
+.pod-play-overlay-small {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.pod-card:hover .pod-play-overlay-small {
+  opacity: 1;
+}
+
+.play-btn-circle-small {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 0, 0, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pod-card:hover .play-btn-circle-small {
+  animation: pulse-red 1.5s infinite;
+}
+
+.play-triangle-small {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-left: 4px;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+.pod-card-content {
+  padding: 20px;
+}
+
+.pod-ep-tag {
+  font-size: 0.8rem;
+  color: #0056b3;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.pod-card-content h4 {
+  font-size: 1.1rem;
+  color: #0f172a;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.pod-date {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.pod-grid-next {
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.pod-grid-next:hover {
+  background: #0056b3;
+  color: #fff;
+  border-color: #0056b3;
+}
+
+/* --------------------------------------------------
+   PLATFORMS SECTION
+   -------------------------------------------------- */
+.pod-platforms {
+  background-color: #ffffff;
+  padding: 80px 0;
+  border-top: 1px solid #f1f5f9;
+}
+
+.pod-plat-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 20px;
+  padding: 50px 60px;
+}
+
+.pod-plat-info {
+  max-width: 400px;
+}
+
+.plat-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0056b3;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.pod-plat-info h3 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.pod-plat-info p {
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+.pod-plat-links {
+  display: flex;
+  gap: 20px;
+}
+
+.plat-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  padding: 15px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plat-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.plat-link img {
+  width: 40px;
+  height: 40px;
+}
+
+.plat-text span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.plat-text p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------- */
+@media (max-width: 1024px) {
+  .pod-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pod-hero-left {
+    max-width: 100%;
+  }
+  .pod-hero-btns {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .pod-feat-desc-block {
+    text-align: left;
+  }
+  .pod-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pod-grid-next {
+    display: none;
+  }
+  .pod-plat-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pod-hero {
+    padding: 100px 0 60px;
+  }
+  .pod-hero-title {
+    font-size: 2.5rem;
+  }
+  .pod-hero-btns {
+    flex-direction: column;
+  }
+  .pod-grid {
+    grid-template-columns: 1fr;
+  }
+}

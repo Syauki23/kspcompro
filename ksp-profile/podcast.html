@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css?v=1.2" />
-</head>
+  <link rel="stylesheet" href="podcast.css" /></head>
 <body class="page-podcast">
 
   <!-- =====================
@@ -71,12 +71,11 @@
         <div class="pod-hero-right">
           <span class="pod-hero-feat-label">FEATURED EPISODE</span>
           <div class="pod-feat-card">
-            <div class="pod-feat-img">
-              <img src="assets/featured_podcast.png" alt="Featured Episode">
+            <div class="pod-feat-video-wrapper" id="featured-video-container" onclick="loadFeaturedVideo()">
+              <img src="assets/featured_podcast.png" alt="Featured Episode" id="featured-thumbnail">
               <div class="pod-play-overlay">
                 <div class="play-btn-circle"><div class="play-triangle"></div></div>
               </div>
-              <span class="pod-img-tag">Navigating Through Maritime</span>
             </div>
             <div class="pod-feat-content">
               <span class="pod-ep-num">EP. 12</span>
@@ -122,6 +121,9 @@
             <div class="pod-card">
               <div class="pod-card-img">
                 <img src="assets/life_podcast.png" alt="Life Episode">
+                <div class="pod-play-overlay-small">
+                  <div class="play-btn-circle-small"><div class="play-triangle-small"></div></div>
+                </div>
                 <span class="pod-duration">28:16</span>
               </div>
               <div class="pod-card-content">
@@ -134,6 +136,9 @@
             <div class="pod-card">
               <div class="pod-card-img">
                 <img src="assets/life_podcast.png" alt="Life Episode">
+                <div class="pod-play-overlay-small">
+                  <div class="play-btn-circle-small"><div class="play-triangle-small"></div></div>
+                </div>
                 <span class="pod-duration">26:48</span>
               </div>
               <div class="pod-card-content">
@@ -146,6 +151,9 @@
             <div class="pod-card">
               <div class="pod-card-img">
                 <img src="assets/life_podcast.png" alt="Life Episode">
+                <div class="pod-play-overlay-small">
+                  <div class="play-btn-circle-small"><div class="play-triangle-small"></div></div>
+                </div>
                 <span class="pod-duration">31:02</span>
               </div>
               <div class="pod-card-content">
@@ -172,6 +180,9 @@
             <div class="pod-card">
               <div class="pod-card-img">
                 <img src="assets/maritime_podcast.png" alt="Maritime Episode">
+                <div class="pod-play-overlay-small">
+                  <div class="play-btn-circle-small"><div class="play-triangle-small"></div></div>
+                </div>
                 <span class="pod-duration">32:45</span>
               </div>
               <div class="pod-card-content">
@@ -184,6 +195,9 @@
             <div class="pod-card">
               <div class="pod-card-img">
                 <img src="assets/maritime_podcast.png" alt="Maritime Episode">
+                <div class="pod-play-overlay-small">
+                  <div class="play-btn-circle-small"><div class="play-triangle-small"></div></div>
+                </div>
                 <span class="pod-duration">29:18</span>
               </div>
               <div class="pod-card-content">
@@ -196,6 +210,9 @@
             <div class="pod-card">
               <div class="pod-card-img">
                 <img src="assets/maritime_podcast.png" alt="Maritime Episode">
+                <div class="pod-play-overlay-small">
+                  <div class="play-btn-circle-small"><div class="play-triangle-small"></div></div>
+                </div>
                 <span class="pod-duration">27:33</span>
               </div>
               <div class="pod-card-content">
@@ -412,6 +429,15 @@
     </div>
   </div>
 
+  <script>
+    function loadFeaturedVideo() {
+      const container = document.getElementById('featured-video-container');
+      // Using a more reliable embed link
+      container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>`;
+      container.onclick = null; // Prevent re-loading
+      container.style.cursor = 'default';
+    }
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
