@@ -546,7 +546,7 @@
    -------------------------------------------------- */
 .pod-platforms {
   background-color: #ffffff;
-  padding: 80px 0;
+  padding: 40px 0;
   border-top: 1px solid #f1f5f9;
 }
 
@@ -558,8 +558,8 @@
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  border-radius: 20px;
-  padding: 50px 60px;
+  border-radius: 16px;
+  padding: 30px 40px;
 }
 
 .pod-plat-info {
@@ -576,14 +576,14 @@
 }
 
 .pod-plat-info h3 {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: #0f172a;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   font-weight: 700;
 }
 
 .pod-plat-info p {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #475569;
 }
 
@@ -595,12 +595,12 @@
 .plat-link {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   background: #fff;
-  padding: 15px 30px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -610,20 +610,20 @@
 }
 
 .plat-link img {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 }
 
 .plat-text span {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #000;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .plat-text p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #64748b;
   margin: 0;
 }
